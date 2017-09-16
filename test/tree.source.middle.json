@@ -1,0 +1,96 @@
+{
+  "type": "Document",
+  "children": [
+    {
+      "type": "Header",
+      "depth": 2,
+      "children": [
+        {
+          "type": "Str",
+          "value": "textarea",
+          "raw": "textarea"
+        }
+      ],
+      "raw": "## textarea "
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Str",
+          "value": "A simple textarea component ",
+          "raw": "A simple textarea component "
+        }
+      ],
+      "raw": "A simple textarea component "
+    },
+    {
+      "type": "Header",
+      "depth": 3,
+      "children": [
+        {
+          "type": "Str",
+          "value": "methods",
+          "raw": "methods"
+        }
+      ],
+      "raw": "### methods "
+    },
+    {
+      "type": "List",
+      "ordered": false,
+      "start": null,
+      "loose": false,
+      "children": [
+        {
+          "type": "ListItem",
+          "loose": false,
+          "checked": null,
+          "children": [
+            {
+              "type": "Paragraph",
+              "children": [
+                {
+                  "type": "Code",
+                  "value": "enable()",
+                  "raw": "`enable()`"
+                },
+                {
+                  "type": "Str",
+                  "value": " \nEnable the textarea ",
+                  "raw": " \nEnable the textarea "
+                }
+              ],
+              "raw": "`enable()` \nEnable the textarea "
+            }
+          ],
+          "raw": "- `enable()` \nEnable the textarea "
+        }
+      ],
+      "raw": "- `enable()` \nEnable the textarea "
+    },
+    {
+      "type": "Header",
+      "depth": 3,
+      "children": [
+        {
+          "type": "Str",
+          "value": "last header",
+          "raw": "last header"
+        }
+      ],
+      "raw": "## last header "
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Str",
+          "value": "Last Paragraph",
+          "raw": "Last Paragraph"
+        }
+      ],
+      "raw": "Last Paragraph"
+    }
+  ]
+}

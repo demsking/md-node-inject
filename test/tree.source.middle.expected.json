@@ -1,0 +1,80 @@
+{
+  "type": "Document",
+  "children": [
+    {
+      "type": "Header",
+      "depth": 2,
+      "children": [
+        {
+          "type": "Str",
+          "value": "textarea",
+          "raw": "textarea"
+        }
+      ],
+      "raw": "## textarea "
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Str",
+          "value": "A simple textarea component ",
+          "raw": "A simple textarea component "
+        }
+      ],
+      "raw": "A simple textarea component "
+    },
+    {
+      "type": "Header",
+      "depth": 3,
+      "children": [
+        {
+          "type": "Str",
+          "value": "methods",
+          "raw": "methods"
+        }
+      ],
+      "raw": "### methods "
+    },
+    {
+      "type": "Header",
+      "depth": 3,
+      "children": [
+        {
+          "type": "Str",
+          "value": "NEW_HEADER",
+          "raw": "NEW_HEADER"
+        }
+      ],
+      "raw": "### NEW_HEADER "
+    },
+    {
+      "type": "Str",
+      "value": "NEW_PARAGRAPTH",
+      "raw": "NEW_PARAGRAPTH"
+    },
+    {
+      "type": "Header",
+      "depth": 3,
+      "children": [
+        {
+          "type": "Str",
+          "value": "last header",
+          "raw": "last header"
+        }
+      ],
+      "raw": "## last header "
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Str",
+          "value": "Last Paragraph",
+          "raw": "Last Paragraph"
+        }
+      ],
+      "raw": "Last Paragraph"
+    }
+  ]
+}

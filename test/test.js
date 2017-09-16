@@ -53,6 +53,16 @@ describe('transform', () => {
     assert.deepEqual(doc, expected)
   })
 
+  it('should successfully inject with a source from middle', () => {
+    const section = 'methods'
+    const target = require('./tree.source.middle')
+    const source = { children: [ newHeaderNode, newParagraphNode ] }
+    const expected = require('./tree.source.middle.expected')
+    const doc = inject(section, target, source)
+
+    assert.deepEqual(doc, expected)
+  })
+
   it('should successfully inject with an existing section', () => {
     const section = 'methods'
     const target = require('./tree.multiple.section')
