@@ -1,0 +1,40 @@
+{
+  "type": "Document",
+  "children": [
+    {
+      "type": "Header",
+      "depth": 2,
+      "children": [
+        {
+          "type": "Str",
+          "value": "textarea",
+          "raw": "textarea"
+        }
+      ],
+      "raw": "## textarea "
+    },
+    {
+      "type": "Paragraph",
+      "children": [
+        {
+          "type": "Str",
+          "value": "A simple textarea component ",
+          "raw": "A simple textarea component "
+        }
+      ],
+      "raw": "A simple textarea component "
+    },
+    {
+      "type": "Header",
+      "depth": 3,
+      "children": [
+        {
+          "type": "Str",
+          "value": "methods",
+          "raw": "methods"
+        }
+      ],
+      "raw": "### methods "
+    }
+  ]
+}
