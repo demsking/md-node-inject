@@ -14,7 +14,7 @@ module.exports = (section, target, source) => {
   for (let node of target.children) {
     if (sectionLevel) {
       if (!isClean) {
-        if (isNaN(node.depth) || node.depth >= sectionLevel) {
+        if (isNaN(node.depth) || node.depth > sectionLevel) {
           continue
         }
         isClean = true
