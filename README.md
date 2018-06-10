@@ -54,4 +54,4 @@ MIT
 
 ## License
 
-Under the MIT license. See [LICENSE](https://github.com/demsking/md-node-inject/blob/master/LICENSE) file for more details.
+Under the MIT license. See [LICENSE](https://gitlab.com/demsking/md-node-inject/blob/master/LICENSE) file for more details.

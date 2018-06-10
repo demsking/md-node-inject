@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/demsking/unist-util-inject.git"
+    "url": "git+https://gitlab.com/demsking/unist-util-inject.git"
   },
   "keywords": [
     "markdown",
@@ -24,9 +24,9 @@
   "author": "Sébastien Demanou",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/demsking/unist-util-inject/issues"
+    "url": "https://gitlab.com/demsking/unist-util-inject/issues"
   },
-  "homepage": "https://github.com/demsking/unist-util-inject#readme",
+  "homepage": "https://gitlab.com/demsking/unist-util-inject",
   "devDependencies": {
     "coveralls": "^2.13.1",
     "istanbul": "^0.4.5",
