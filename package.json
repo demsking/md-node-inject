@@ -1,6 +1,6 @@
 {
   "name": "md-node-inject",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Markdown AST injection utility",
   "main": "index.js",
   "scripts": {
