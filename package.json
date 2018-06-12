@@ -25,6 +25,7 @@
   },
   "homepage": "https://gitlab.com/demsking/unist-util-inject",
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "jest": "^23.1.0",
     "request": "^2.87.0",
     "standard": "^11.0.1"
