@@ -1,19 +1,16 @@
 {
   "name": "md-node-inject",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Markdown AST injection utility",
   "main": "index.js",
   "scripts": {
-    "prepublish": "npm test",
     "pretest": "npm run lint",
-    "test": "mocha --harmony test/*.js",
-    "lint": "standard index.js test/*.js",
-    "coverage": "istanbul --harmony cover _mocha test",
-    "coveralls": "npm run lint && istanbul cover _mocha --report lcovonly -- -R spec test && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose"
+    "test": "jest --coverage",
+    "lint": "standard index.js test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/demsking/unist-util-inject.git"
+    "url": "git+https://gitlab.com/demsking/unist-util-inject.git"
   },
   "keywords": [
     "markdown",
@@ -24,14 +21,14 @@
   "author": "Sébastien Demanou",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/demsking/unist-util-inject/issues"
+    "url": "https://gitlab.com/demsking/unist-util-inject/issues"
   },
-  "homepage": "https://github.com/demsking/unist-util-inject#readme",
+  "homepage": "https://gitlab.com/demsking/unist-util-inject",
   "devDependencies": {
-    "coveralls": "^2.13.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.5.3",
-    "standard": "^10.0.3"
+    "babel-core": "^6.26.3",
+    "jest": "^23.1.0",
+    "request": "^2.87.0",
+    "standard": "^11.0.1"
   },
   "dependencies": {}
 }

@@ -1,6 +1,6 @@
 # Markdown AST injection utility
 
-[![Build Status](https://travis-ci.org/demsking/md-node-inject.svg?branch=master)](https://travis-ci.org/demsking/md-node-inject) [![Known Vulnerabilities](https://snyk.io/test/github/demsking/md-node-inject/badge.svg)](https://snyk.io/test/github/demsking/md-node-inject) [![Coverage Status](https://coveralls.io/repos/github/demsking/md-node-inject/badge.svg?branch=master)](https://coveralls.io/github/demsking/md-node-inject?branch=master)
+[![npm](https://img.shields.io/npm/v/md-node-inject.svg)](https://www.npmjs.com/package/md-node-inject) [![Build status](https://gitlab.com/demsking/md-node-inject/badges/master/build.svg)](https://gitlab.com/demsking/md-node-inject/commits/master) [![Test coverage](https://gitlab.com/demsking/md-node-inject/badges/master/coverage.svg)](https://gitlab.com/demsking/md-node-inject/pipelines)
 
 ## Install
 
@@ -54,4 +54,4 @@ MIT
 
 ## License
 
-Under the MIT license. See [LICENSE](https://github.com/demsking/md-node-inject/blob/master/LICENSE) file for more details.
+Under the MIT license. See [LICENSE](https://gitlab.com/demsking/md-node-inject/blob/master/LICENSE) file for more details.
