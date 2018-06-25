@@ -1,23 +1,13 @@
 image: node:latest
 
-cache:
-  key: ${CI_COMMIT_REF_SLUG}
-  paths:
-    - node_modules/
-
 stages:
-  - setup
   - test
   - publish
-
-npm ci:
-  stage: setup
-  script:
-    - npm ci
 
 code quality:
   stage: test
   script:
+    - npm ci
     - npm run lint
 
 npm outdated:
@@ -49,8 +39,19 @@ test on nodejs 8:
 test on latest nodejs:
   stage: test
   script:
+    - npm ci
     - npm test
   coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
+
+package:
+  stage: publish
+  only:
+    - tags
+  script:
+    - npm pack
+  artifacts:
+    paths:
+      - ./*.tgz
 
 publish:
   stage: publish
