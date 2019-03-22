@@ -1,34 +1,33 @@
-'use strict'
-
 const assert = require('assert')
 const inject = require('..')
 
 /* global describe it */
+/* eslint-disable global-require */
 
 describe('transform', () => {
   const newHeaderNode = {
-    'type': 'Header',
-    'depth': 3,
-    'children': [
+    type: 'Header',
+    depth: 3,
+    children: [
       {
-        'type': 'Str',
-        'value': 'NEW_HEADER',
-        'raw': 'NEW_HEADER'
+        type: 'Str',
+        value: 'NEW_HEADER',
+        raw: 'NEW_HEADER'
       }
     ],
-    'raw': '### NEW_HEADER '
+    raw: '### NEW_HEADER '
   }
   const newParagraphNode = {
-    'type': 'Str',
-    'value': 'NEW_PARAGRAPTH',
-    'raw': 'NEW_PARAGRAPTH'
+    type: 'Str',
+    value: 'NEW_PARAGRAPTH',
+    raw: 'NEW_PARAGRAPTH'
   }
 
   it('should failed to inject with a not found section', () => {
     const section = 'API'
     const target = { children: [] }
-    const source = { children: [{
-      type: 'Header', value: 'Hello H1', children: [] }]}
+    const source = { children: [ {
+      type: 'Header', value: 'Hello H1', children: [] } ] }
 
     assert.throws(() => inject(section, target, source), /Not Found/)
   })
@@ -69,6 +68,8 @@ describe('transform', () => {
     const source = { children: [ newHeaderNode, newParagraphNode ] }
 
     const doc = inject(section, target, source)
+
+    /* eslint-disable-next-line arrow-body-style */
     const indexNode = doc.children.findIndex((node) => {
       return node.type === 'Header' && inject.findValue(node, 'NEW_HEADER')
     })

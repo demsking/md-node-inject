@@ -1,9 +1,11 @@
-'use strict'
+const headers = [ 'heading', 'Header' ]
 
-const headers = ['heading', 'Header']
+/* eslint-disable-next-line arrow-body-style */
 const findValue = (node, value) => node.children.find((child) => {
   return child.value === value || child.raw === value
 })
+
+const find = findValue
 
 module.exports = (section, target, source) => {
   const children = []
@@ -11,7 +13,7 @@ module.exports = (section, target, source) => {
   let isClean = false
   let sectionLevel = 0
 
-  for (let node of target.children) {
+  for (const node of target.children) {
     if (sectionLevel) {
       if (!isClean) {
         if (isNaN(node.depth) || node.depth > sectionLevel) {
@@ -23,7 +25,7 @@ module.exports = (section, target, source) => {
 
     children.push(node)
 
-    if (!sectionLevel && headers.indexOf(node.type) !== -1 && findValue(node, section)) {
+    if (!sectionLevel && headers.includes(node.type) && find(node, section)) {
       sectionLevel = node.depth
 
       source.children.forEach((node) => children.push(node))
