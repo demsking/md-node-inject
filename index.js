@@ -36,7 +36,7 @@ module.exports = (section, target, source) => {
     throw new Error(`Section '${section}' Not Found in target`)
   }
 
-  return Object.assign({}, target, { children })
+  return { ...target, children }
 }
 
 module.exports.findValue = findValue
