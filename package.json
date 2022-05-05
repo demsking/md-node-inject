@@ -19,6 +19,12 @@
     "injection"
   ],
   "author": "Sébastien Demanou",
+  "contributors": [
+    {
+      "name": "Sébastien Demanou",
+      "url": "https://gitlab.com/demsking"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://gitlab.com/demsking/md-node-inject/issues"
