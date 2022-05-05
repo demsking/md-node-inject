@@ -1,6 +1,9 @@
 # Markdown AST injection utility
 
-[![npm](https://img.shields.io/npm/v/md-node-inject.svg)](https://www.npmjs.com/package/md-node-inject) [![Build status](https://gitlab.com/demsking/md-node-inject/badges/master/pipeline.svg)](https://gitlab.com/demsking/md-node-inject/pipelines) [![Test coverage](https://gitlab.com/demsking/md-node-inject/badges/master/coverage.svg)](https://gitlab.com/demsking/md-node-inject/pipelines)
+[![npm](https://img.shields.io/npm/v/md-node-inject.svg)](https://www.npmjs.com/package/md-node-inject)
+[![Build status](https://gitlab.com/demsking/md-node-inject/badges/master/pipeline.svg)](https://gitlab.com/demsking/md-node-inject/pipelines)
+[![Test coverage](https://gitlab.com/demsking/md-node-inject/badges/master/coverage.svg)](https://gitlab.com/demsking/md-node-inject/pipelines)
+[![Buy me a beer](https://img.shields.io/badge/Buy%20me-a%20beer-1f425f.svg)](https://www.buymeacoffee.com/demsking)
 
 ## Install
 
