@@ -2,8 +2,8 @@
 
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { readFile } from 'fs/promises';
-import { inject } from '../index.js';
+import { readFile } from 'node:fs/promises';
+import inject from '../index.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

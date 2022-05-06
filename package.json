@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
-    "lint": "eslint index.js test",
-    "lint:fix": "eslint --fix index.js test"
+    "lint": "eslint index.js test"
   },
   "repository": {
     "type": "git",

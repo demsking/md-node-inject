@@ -4,7 +4,7 @@ function findValue(node, value) {
   return node.children.find((child) => child.value === value || child.raw === value);
 }
 
-export function inject(section, target, source) {
+export default function inject(section, target, source) {
   const children = [];
 
   let isClean = false;
