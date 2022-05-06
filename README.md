@@ -11,15 +11,15 @@ This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908
 : Node 14+ is needed to use it and it must be imported instead of required.
 
 ```sh
-npm install --save md-node-inject
+npm install md-node-inject
 ```
 
 ## Usage
 
-```javascript
-const ast = require('markdown-to-ast')
-const inject = require('md-node-inject')
-const toMarkdown = require('ast-to-markdown')
+```js
+import ast from 'markdown-to-ast';
+import inject from 'md-node-inject';
+import toMarkdown from 'ast-to-markdown';
 
 const mdContent = `
   # Sample
@@ -29,24 +29,27 @@ const mdContent = `
 
   # License
   MIT
-`
+`;
+
 const mdApiContent = `
   ## method()
   Method description
-`
+`;
 
-const mdContentAst = ast.parse(mdContent)
-const mdApiContentAst = ast.parse(mdApiContent)
+const mdContentAst = ast.parse(mdContent);
+const mdApiContentAst = ast.parse(mdApiContent);
 
-const injectionSection = 'API'
-const mergedContentAst = inject(injectionSection, mdContentAst, mdApiContentAst)
+const injectionSection = 'API';
+const mergedContentAst = inject(injectionSection, mdContentAst, mdApiContentAst);
 
-const mergedContent = toMarkdown(mergedContentAst)
+const mergedContent = toMarkdown(mergedContentAst);
 
-console.log(mergedContent)
+console.log(mergedContent);
 ```
-Output:
-```markdown
+
+**Output:**
+
+```md
 # Sample
 Description
 
