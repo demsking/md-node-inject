@@ -18,8 +18,8 @@ npm install md-node-inject
 
 ```js
 import ast from 'markdown-to-ast';
-import inject from 'md-node-inject';
 import toMarkdown from 'ast-to-markdown';
+import { inject } from 'md-node-inject';
 
 const mdContent = `
   # Sample
