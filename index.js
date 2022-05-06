@@ -1,42 +1,38 @@
-const headers = [ 'heading', 'Header' ]
+const headers = ['heading', 'Header'];
 
-/* eslint-disable-next-line arrow-body-style */
-const findValue = (node, value) => node.children.find((child) => {
-  return child.value === value || child.raw === value
-})
+function findValue(node, value) {
+  return node.children.find((child) => child.value === value || child.raw === value);
+}
 
-const find = findValue
+export function inject(section, target, source) {
+  const children = [];
 
-module.exports = (section, target, source) => {
-  const children = []
-
-  let isClean = false
-  let sectionLevel = 0
+  let isClean = false;
+  let sectionLevel = 0;
 
   for (const node of target.children) {
     if (sectionLevel) {
       if (!isClean) {
-        if (isNaN(node.depth) || node.depth > sectionLevel) {
-          continue
+        if (Number.isNaN(node.depth) || node.depth > sectionLevel) {
+          continue;
         }
-        isClean = true
+
+        isClean = true;
       }
     }
 
-    children.push(node)
+    children.push(node);
 
-    if (!sectionLevel && headers.includes(node.type) && find(node, section)) {
-      sectionLevel = node.depth
+    if (!sectionLevel && headers.includes(node.type) && findValue(node, section)) {
+      sectionLevel = node.depth;
 
-      source.children.forEach((node) => children.push(node))
+      source.children.forEach((node) => children.push(node));
     }
   }
 
   if (sectionLevel === 0) {
-    throw new Error(`Section '${section}' Not Found in target`)
+    throw new Error(`Section '${section}' not found in target`);
   }
 
-  return { ...target, children }
+  return { ...target, children };
 }
-
-module.exports.findValue = findValue

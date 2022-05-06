@@ -8,8 +8,36 @@
         {
           "type": "Str",
           "value": "textarea",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 3
+            },
+            "end": {
+              "line": 1,
+              "column": 11
+            }
+          },
+          "range": [
+            3,
+            11
+          ],
           "raw": "textarea"
         }
+      ],
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 12
+        }
+      },
+      "range": [
+        0,
+        12
       ],
       "raw": "## textarea "
     },
@@ -19,8 +47,36 @@
         {
           "type": "Str",
           "value": "A simple textarea component ",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 0
+            },
+            "end": {
+              "line": 2,
+              "column": 28
+            }
+          },
+          "range": [
+            13,
+            41
+          ],
           "raw": "A simple textarea component "
         }
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 28
+        }
+      },
+      "range": [
+        13,
+        41
       ],
       "raw": "A simple textarea component "
     },
@@ -85,29 +141,6 @@
         }
       ],
       "raw": "- `enable()` \nEnable the textarea "
-    },
-    {
-      "type": "Header",
-      "depth": 3,
-      "children": [
-        {
-          "type": "Str",
-          "value": "last header",
-          "raw": "last header"
-        }
-      ],
-      "raw": "## last header "
-    },
-    {
-      "type": "Paragraph",
-      "children": [
-        {
-          "type": "Str",
-          "value": "Last Paragraph",
-          "raw": "Last Paragraph"
-        }
-      ],
-      "raw": "Last Paragraph"
     }
   ]
 }

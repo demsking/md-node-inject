@@ -85,29 +85,6 @@
         }
       ],
       "raw": "- `enable()` \nEnable the textarea "
-    },
-    {
-      "type": "Header",
-      "depth": 3,
-      "children": [
-        {
-          "type": "Str",
-          "value": "last header",
-          "raw": "last header"
-        }
-      ],
-      "raw": "## last header "
-    },
-    {
-      "type": "Paragraph",
-      "children": [
-        {
-          "type": "Str",
-          "value": "Last Paragraph",
-          "raw": "Last Paragraph"
-        }
-      ],
-      "raw": "Last Paragraph"
     }
   ]
 }

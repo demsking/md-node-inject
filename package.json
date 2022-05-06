@@ -2,9 +2,10 @@
   "name": "md-node-inject",
   "version": "1.0.1",
   "description": "Markdown AST injection utility",
-  "main": "index.js",
+  "exports": "./index.js",
+  "type": "module",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
     "lint": "eslint index.js test",
     "lint:fix": "eslint --fix index.js test"
   },
@@ -36,5 +37,8 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "jest": "^28.0.3"
+  },
+  "engines": {
+    "node": ">=14.16"
   }
 }

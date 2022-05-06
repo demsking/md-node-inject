@@ -1,7 +1,7 @@
 test
 coverage
-.directory
-.eslintrc.js
-.gitignore
+.*
+*.nix
 *.tgz
 *.yml
+*.yaml
