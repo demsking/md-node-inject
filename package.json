@@ -4,6 +4,7 @@
   "description": "Markdown AST injection utility",
   "exports": "./index.js",
   "type": "module",
+  "typings": "index.d.ts",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
     "lint": "eslint index.js test"
@@ -31,6 +32,7 @@
   },
   "homepage": "https://gitlab.com/demsking/md-node-inject",
   "devDependencies": {
+    "@textlint/ast-node-types": "^12.1.1",
     "eslint": "^8.14.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",

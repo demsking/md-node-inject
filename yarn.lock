@@ -572,6 +572,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@textlint/ast-node-types@^12.1.1":
+  version "12.1.1"
+  resolved "https://registry.yarnpkg.com/@textlint/ast-node-types/-/ast-node-types-12.1.1.tgz#189cdc932a50b9dd14b6829848408c22bb72f976"
+  integrity sha512-5/XK9S1177UYetOY6407o1RDuNVndaYfuzsZwhmo52V367s4ZuUD2064WhbmCd6TPyKD4dVr2zoWjfNDfzUZQg==
+
 "@types/babel__core@^7.1.14":
   version "7.1.19"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.19.tgz#7b497495b7d1b4812bdb9d02804d0576f43ee460"
