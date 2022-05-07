@@ -1,8 +1,17 @@
-const assert = require('assert')
-const inject = require('..')
+/* global describe it expect */
 
-/* global describe it */
-/* eslint-disable global-require */
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { readFile } from 'node:fs/promises';
+import inject from '../index.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+async function loadJson(filename) {
+  const packageFilename = resolve(__dirname, filename);
+
+  return JSON.parse(await readFile(packageFilename));
+}
 
 describe('transform', () => {
   const newHeaderNode = {
@@ -12,74 +21,74 @@ describe('transform', () => {
       {
         type: 'Str',
         value: 'NEW_HEADER',
-        raw: 'NEW_HEADER'
-      }
+        raw: 'NEW_HEADER',
+      },
     ],
-    raw: '### NEW_HEADER '
-  }
+    raw: '### NEW_HEADER ',
+  };
+
   const newParagraphNode = {
     type: 'Str',
     value: 'NEW_PARAGRAPTH',
-    raw: 'NEW_PARAGRAPTH'
-  }
+    raw: 'NEW_PARAGRAPTH',
+  };
 
   it('should failed to inject with a not found section', () => {
-    const section = 'API'
-    const target = { children: [] }
-    const source = { children: [ {
-      type: 'Header', value: 'Hello H1', children: [] } ] }
+    const section = 'API';
+    const target = { children: [] };
+    const source = { children: [{
+      type: 'Header', value: 'Hello H1', children: [] }] };
 
-    assert.throws(() => inject(section, target, source), /Not Found/)
-  })
+    expect(() => inject(section, target, source)).toThrow(/not found/);
+  });
 
-  it('should successfully inject with an empty source at last', () => {
-    const section = 'methods'
-    const target = require('./tree.empty.source.last')
-    const source = { children: [] }
-    const expected = require('./tree.empty.source.last.expected')
-    const doc = inject(section, target, source)
+  it('should successfully inject an empty source at last', async () => {
+    const section = 'methods';
+    const target = await loadJson('./tree.empty.source.last.json');
+    const source = { children: [] };
+    const expected = await loadJson('./tree.empty.source.last.expected.json');
+    const doc = inject(section, target, source);
 
-    assert.deepEqual(doc, expected)
-  })
+    expect(doc).toEqual(expected);
+  });
 
-  it('should successfully inject with an empty source from middle', () => {
-    const section = 'methods'
-    const target = require('./tree.empty.source.middle')
-    const source = { children: [] }
-    const expected = require('./tree.empty.source.middle.expected')
-    const doc = inject(section, target, source)
+  it('should successfully inject a source at last', async () => {
+    const section = 'methods';
+    const target = await loadJson('./tree.empty.source.last.json');
+    const source = { children: [newHeaderNode, newParagraphNode] };
+    const expected = await loadJson('./tree.source.last.expected.json');
+    const doc = inject(section, target, source);
 
-    assert.deepEqual(doc, expected)
-  })
+    expect(doc).toEqual(expected);
+  });
 
-  it('should successfully inject with a source from middle', () => {
-    const section = 'methods'
-    const target = require('./tree.source.middle')
-    const source = { children: [ newHeaderNode, newParagraphNode ] }
-    const expected = require('./tree.source.middle.expected')
-    const doc = inject(section, target, source)
+  it('should successfully inject with an empty source from middle', async () => {
+    const section = 'methods';
+    const target = await loadJson('./tree.empty.source.middle.json');
+    const source = { children: [] };
+    const expected = await loadJson('./tree.empty.source.middle.expected.json');
+    const doc = inject(section, target, source);
 
-    assert.deepEqual(doc, expected)
-  })
+    expect(doc).toEqual(expected);
+  });
 
-  it('should successfully inject with an existing section', () => {
-    const section = 'methods'
-    const target = require('./tree.multiple.section')
-    const source = { children: [ newHeaderNode, newParagraphNode ] }
+  it('should successfully inject with a source from middle', async () => {
+    const section = 'methods';
+    const target = await loadJson('./tree.source.middle.json');
+    const source = { children: [newHeaderNode, newParagraphNode] };
+    const expected = await loadJson('./tree.source.middle.expected.json');
+    const doc = inject(section, target, source);
 
-    const doc = inject(section, target, source)
+    expect(doc).toEqual(expected);
+  });
 
-    /* eslint-disable-next-line arrow-body-style */
-    const indexNode = doc.children.findIndex((node) => {
-      return node.type === 'Header' && inject.findValue(node, 'NEW_HEADER')
-    })
+  it('should successfully inject with an existing section', async () => {
+    const section = 'methods';
+    const target = await loadJson('./tree.multiple.section.json');
+    const source = { children: [newHeaderNode, newParagraphNode] };
+    const expected = await loadJson('./tree.multiple.section.expected.json');
+    const doc = inject(section, target, source);
 
-    assert.notEqual(indexNode, -1)
-
-    const nodeHeader = doc.children[indexNode]
-    const nodeParagraph = doc.children[indexNode + 1]
-
-    assert.deepEqual(nodeHeader, newHeaderNode)
-    assert.deepEqual(nodeParagraph, newParagraphNode)
-  })
-})
+    expect(doc).toEqual(expected);
+  });
+});

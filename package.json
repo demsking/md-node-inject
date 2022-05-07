@@ -1,12 +1,13 @@
 {
   "name": "md-node-inject",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Markdown AST injection utility",
-  "main": "index.js",
+  "exports": "./index.js",
+  "type": "module",
+  "typings": "index.d.ts",
   "scripts": {
-    "test": "jest --coverage",
-    "lint": "eslint index.js test",
-    "lint:fix": "eslint --fix index.js test"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
+    "lint": "eslint index.js test"
   },
   "repository": {
     "type": "git",
@@ -19,18 +20,26 @@
     "injection"
   ],
   "author": "Sébastien Demanou",
+  "contributors": [
+    {
+      "name": "Sébastien Demanou",
+      "url": "https://gitlab.com/demsking"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://gitlab.com/demsking/md-node-inject/issues"
   },
   "homepage": "https://gitlab.com/demsking/md-node-inject",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "eslint": "^7.4.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "jest": "^26.1.0"
+    "@textlint/ast-node-types": "^12.1.1",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "^28.0.3"
   },
-  "dependencies": {}
+  "engines": {
+    "node": ">=14.16"
+  }
 }

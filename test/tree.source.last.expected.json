@@ -38,26 +38,20 @@
     },
     {
       "type": "Header",
-      "depth": 2,
+      "depth": 3,
       "children": [
         {
           "type": "Str",
-          "value": "last header",
-          "raw": "last header"
+          "value": "NEW_HEADER",
+          "raw": "NEW_HEADER"
         }
       ],
-      "raw": "## last header "
+      "raw": "### NEW_HEADER "
     },
     {
-      "type": "Paragraph",
-      "children": [
-        {
-          "type": "Str",
-          "value": "Last Paragraph",
-          "raw": "Last Paragraph"
-        }
-      ],
-      "raw": "Last Paragraph"
+      "type": "Str",
+      "value": "NEW_PARAGRAPTH",
+      "raw": "NEW_PARAGRAPTH"
     }
   ]
 }
