@@ -8,30 +8,28 @@ export default function inject(section, target, source) {
   const children = [];
 
   let isClean = false;
-  let sectionLevel = 0;
+  let sectionDepth = -1;
 
   for (const node of target.children) {
-    if (sectionLevel) {
-      if (!isClean) {
-        if (Number.isNaN(node.depth) || node.depth > sectionLevel) {
-          continue;
-        }
-
-        isClean = true;
+    if (sectionDepth > -1 && isClean === false) {
+      if (!node.depth || node.depth > sectionDepth) {
+        continue;
       }
+
+      isClean = true;
     }
 
     children.push(node);
 
-    if (!sectionLevel && headers.includes(node.type) && findValue(node, section)) {
-      sectionLevel = node.depth;
+    if (sectionDepth === -1 && headers.includes(node.type) && findValue(node, section)) {
+      sectionDepth = node.depth;
 
-      source.children.forEach((node) => children.push(node));
+      children.push(...source.children);
     }
   }
 
-  if (sectionLevel === 0) {
-    throw new Error(`Section '${section}' not found in target`);
+  if (sectionDepth === -1) {
+    throw new Error(`Section ${JSON.stringify(section)} not found in target`);
   }
 
   return { ...target, children };
