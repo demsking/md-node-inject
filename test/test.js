@@ -42,7 +42,7 @@ describe('transform', () => {
     expect(() => inject(section, target, source)).toThrow(/not found/);
   });
 
-  it('should successfully inject an empty source at last', async() => {
+  it('should successfully inject an empty source at last', async () => {
     const section = 'methods';
     const target = await loadJson('./tree.empty.source.last.json');
     const source = { children: [] };
@@ -52,7 +52,7 @@ describe('transform', () => {
     expect(doc).toEqual(expected);
   });
 
-  it('should successfully inject a source at last', async() => {
+  it('should successfully inject a source at last', async () => {
     const section = 'methods';
     const target = await loadJson('./tree.empty.source.last.json');
     const source = { children: [newHeaderNode, newParagraphNode] };
@@ -62,7 +62,7 @@ describe('transform', () => {
     expect(doc).toEqual(expected);
   });
 
-  it('should successfully inject with an empty source from middle', async() => {
+  it('should successfully inject with an empty source from middle', async () => {
     const section = 'methods';
     const target = await loadJson('./tree.empty.source.middle.json');
     const source = { children: [] };
@@ -72,7 +72,7 @@ describe('transform', () => {
     expect(doc).toEqual(expected);
   });
 
-  it('should successfully inject with a source from middle', async() => {
+  it('should successfully inject with a source from middle', async () => {
     const section = 'methods';
     const target = await loadJson('./tree.source.middle.json');
     const source = { children: [newHeaderNode, newParagraphNode] };
@@ -82,7 +82,7 @@ describe('transform', () => {
     expect(doc).toEqual(expected);
   });
 
-  it('should successfully inject with an existing section', async() => {
+  it('should successfully inject with an existing section', async () => {
     const section = 'methods';
     const target = await loadJson('./tree.multiple.section.json');
     const source = { children: [newHeaderNode, newParagraphNode] };
